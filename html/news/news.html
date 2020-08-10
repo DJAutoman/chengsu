@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>新闻</title>
+  <link rel="stylesheet" href="../../css/vant-2.9.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="">新闻</div>
+  <div class="" @click="q">新闻</div>
+  <div class="" @click="a">登录</div>
+  <div class="" @click="b">注册</div>
+
+
+    <div title="选择日期区间" @click="show = true">22</div>
+       <van-calendar v-model="show" type="range" @confirm="onConfirm" />
+
+
+
+  </div>
+
+  <script src="../../script/api.js"></script>
+  <script src="../../script/vue.js"></script>
+  <script src="../../script/vant-2.9.min.js"></script>
+  <script src="../../script/index.js"></script>
+  <script>
+    ApiRender(function ({
+      openWin,
+      closeWin,
+    }) {
+
+      new Vue({
+        el: ".container",
+        data() {
+          return {
+            show: false,
+          }
+        },
+
+        methods: {
+          formatDate(date) {
+            return `${date.getMonth() + 1}/${date.getDate()}`;
+          },
+          onConfirm(date) {
+            console.log(date)
+            const [start, end] = date;
+            console.log(this.show+111)
+            this.show = false;
+            console.log(this.show+222)
+            this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
+          },
+          a() {
+            openWin('login', "widget://html/login/login.html", null)
+          },
+
+          b() {
+            openWin('register', "widget://html/register/register.html", null)
+          },
+
+          q(){
+
+          },
+        },
+      })
+    })
+  </script>
+</body>
+
+</html>

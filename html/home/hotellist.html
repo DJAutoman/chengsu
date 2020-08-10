@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酒店列表</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/hotellist.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="head-search dash">
+            <section @click="goBackHandler" class="search-icon"><img src="../../image/icon/arrow-left.png" alt=""></section>
+            <section class="search-input" @click="goSearch"><img src="../../image/home/search.png" alt=""><input readonly type="text" placeholder="关键字/品牌/酒店名" :value="keywordvalue"></section>
+            <section class="search-time">
+
+                <div class="search-check-in">{{inCheckDate}} 入住</div>
+                <div class="search-check-out">{{outCheckDate}} 入住</div>
+            </section>
+        </div>
+
+        <main>
+            <div class="total-room">
+                <section class="eaves">111多处房源</section>
+                <section class="pull-down">
+                    <section><span class="yellow">筛选条件</span> <img src="../../image/icon/arrow-down-yellow.png" alt="">
+                    </section>
+                    <section><span class="blue">智能排序</span> <img src="../../image/icon/arrow-down-blue.png" alt="">
+                    </section>
+                </section>
+            </div>
+
+            <div class="all-resource">
+                <div class="resource-list dash" @click="goHotelDetail(item.hotel_id)" v-for="item in hotelList" :key="item.hotel_id">
+                    <div class="list-pic">
+                        <img :src="item.hotel_img" alt="">
+                    </div>
+                    <div class="list-right">
+                        <div class="list-right-mar">
+                            <div class="list-top">
+                                <div class="list-top-title">{{item.hotel_name}}</div>
+                                <!--  -->
+                                <div class="list-top-star">
+                                    <div class="star-box">
+                                        <img src="../../image/icon/star.png" alt="">
+                                    </div>
+                                    <div class="star-box">
+                                        <img src="../../image/icon/star.png" alt="">
+                                    </div>
+                                </div>
+                                <!--  -->
+                                <div class="distance">
+                                    <img src="../../image/icon/distance.png" alt="">
+                                    <span>{{floatToPrice(item.km)}}km</span>
+                                </div>
+                            </div>
+                            <div class="list-price">
+                                <section>城宿会员价 <span>￥<span>{{floatToPrice(item.minPrice)}}</span></span> 起</section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="resource-list dash">
+                    <div class="list-pic">
+                        <img src="../../image/hotellist/hoteltest.png" alt="">
+                    </div>
+                    <div class="list-right">
+                        <div class="list-right-mar">
+                            <div class="list-top">
+                                <div class="list-top-title">东莞大酒店</div>
+                               
+                                <div class="list-top-star">
+                                    <div class="star-box">
+                                        <img src="../../image/icon/star.png" alt="">
+                                    </div>
+                                    <div class="star-box">
+                                        <img src="../../image/icon/star.png" alt="">
+                                    </div>
+                                </div>
+                             
+                                <div class="distance">
+                                    <img src="../../image/icon/distance.png" alt="">
+                                    <span>1.17km</span>
+                                </div>
+                            </div>
+                            <div class="list-price">
+                                <section>城宿会员价 <span>￥<span>178</span></span> 起</section>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function({
+            config,
+            storage,
+            openWin,
+            closeWin,
+            post,
+            PageHelper,
+            floatToPrice,
+            showToast,
+        }) {
+            new Vue({
+                el: ".container",
+
+                data() {
+                    return {
+                        lon:storage.getStorage("lon"),
+                        lat:storage.getStorage("lat"),
+                        cityCode:storage.getStorage("cityCode"),
+                        firstDate:storage.getStorage("firstDate"),
+                        secondDate:storage.getStorage("secondDate"),
+                        inCheckDate:(storage.getStorage("firstDate")).split('-').join('/').slice(5),
+                        outCheckDate:(storage.getStorage("secondDate")).split('-').join('/').slice(5),
+
+                        type:0,
+                        startPrice:null,
+                        endPrice:null,
+                        starLv:null,
+                        distance:null,
+                        areaCodes:null,
+                        brand:null,
+                        facilityService:null,
+                        keywordvalue:api.pageParam.keywordvalue,
+                        
+                        pageHelper: null,
+                        hotelList:null,         //酒店列表
+                    }
+                },
+
+                mounted(){
+                    console.log(storage.getStorage("cityCode")+'..........')
+                    console.log(storage.getStorage("firstDate")+'..........')
+
+                    this.pageHelper = new PageHelper(1,10,(pageIndex, pageSize) => this.getHotelList(pageIndex, pageSize));
+                    this.pageHelper.next()
+                },
+
+                methods: {
+                    floatToPrice,
+
+                    goBackHandler() {
+                        closeWin()
+                    },
+                    goHotelDetail(e){
+                        openWin('goHotelDetail', "widget://html/home/hoteldetail.html", {
+                            firstDate : this.firstDate,
+                            secondDate : this.secondDate,
+                            hotelId : e,                                                        
+                        })
+                    },
+                    goSearch(){
+                        openWin('goSearch', "widget://html/home/search.html", {
+                        lon: this.lon,
+                        lat: this.lat,
+                        cityCode: this.cityCode,
+                        firstDate: this.firstDate,
+                        secondDate: this.secondDate,
+                    })
+                    },
+
+                //    酒店列表
+                    getHotelList(pageIndex,pageSize){
+                        post(`/api/cs/hotel/lsit`,{
+                            lon :             104.070822,         // this.lon
+                            lat :             30.58196,          // this.lat
+                            cityCode :        this.cityCode,
+                            type :            this.type ,                //排序方式 0智能排序(默认),1 星级从高到低,2 星际从低到高,3 距离优先,4 价格从低到高,5 价格从高到低
+                            startPrice :      this.startPrice,          //最小价格
+                            endPrice :        this.endPrice,              //最大价格
+                            starLv :          this.starLv,                //多选星级 2 低星,3 三星, 4 四星, 5 五星\|\| 用逗号拼接  2,5,3
+                            distance :        this.distance,              //离 0 就是全城 其他就是实际距离 M单位
+                            areaCodes :       this.areaCodes,             //区域字符串 逗号拼接
+                            brand :           this.brand,                 //品牌字符串 逗号拼接
+                            facilityService : this.facilityService,       //设施服务 逗号拼接
+                            keyword :         this.keywordvalue,               //关键字
+                            join_time :       this.firstDate, //开始时间
+                            out_time :        this.secondDate, //结束时间
+                            pageIndex :       pageIndex ,
+                            pageSize :        pageSize,
+                        },(res,err)=>{
+                            if(err||res.code !== 200){
+                                showToast('酒店获取失败',2000)
+                                return
+                            }
+                            if(res.code === 200){
+                                console.log("res="+JSON.stringify(res))
+                                this.hotelList = res.data.query
+                            }
+
+                        })
+                    },
+
+
+                },
+            })
+
+        })
+    </script>
+</body>
+
+</html>

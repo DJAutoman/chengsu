@@ -1,0 +1,91 @@
+<0!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的粉丝</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/fans.css">
+</head>
+
+<body>
+    <div class="container">
+        <pub-header @back="goBackHandler"><span slot="center">我的粉丝</span><span slot="right"></span></pub-header>
+        <!-- <div class="head-title">
+            <img src="../../image/icon/arrow-left.png" alt="">
+            <span>我的粉丝</span>
+            <span class="head-right"></span>
+        </div> -->
+
+        <main>
+            <div class="team-num">
+                <div class="number">123</div>
+            </div>
+
+            <div class="fans-form">
+
+                <div class="fans-list dash">
+                    <div class="list-left">
+                        <div class="awater"><img src="../../image/mine/awater.png" alt=""></div>
+                        <div class="awater-info">
+                            <div class="awater-name">徐冬冬</div>
+                            <div class="awater-tel">12345678910</div>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="member">非会员</div>
+                        <div class="member-time">2020-22-22</div>
+                    </div>
+                </div>
+
+                <div class="fans-list dash">
+                    <div class="list-left">
+                        <div class="awater"><img src="../../image/mine/awater.png" alt=""></div>
+                        <div class="awater-info">
+                            <div class="awater-name">徐冬冬</div>
+                            <div class="awater-tel">12345678910</div>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="member member-red">非会员</div>
+                        <div class="member-time">2020-22-22</div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function ({
+            openWin,
+            closeWin,
+            importVue,
+
+        }) {
+            const components = importVue(['widget://component/pub-header.vue'])
+            new Vue({
+                el: ".container",
+                components,
+
+                data() {
+                    return {}
+                },
+
+                methods: {
+                    goBackHandler() {
+                        closeWin()
+                    },
+                },
+            })
+
+        })
+    </script>
+</body>
+
+</html>

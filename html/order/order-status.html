@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单-待支付</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/order-status.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img @click="goBackHandler" class="arrow-left" src="../../image/icon/arrow-left-white.png" alt="">
+            <div class="unpaid-a">
+                <div class="unpaid">待支付</div>
+                <div class="unpaid-low">您的订单已生成，支付剩余时间 29:41</div>
+            </div>
+
+            <div class="order-btn">
+                <section class="order-btn-l">立即支付</section>
+                <section class="order-btn-r">取消订单</section>
+            </div>
+        </header>
+
+        <main>
+            <div class="hotel-adress">
+                <div class="hotel-adress-top">
+                    <section class="hotel-name">香格里拉酒店</section>
+                    <section class="hotel-blue">查看详情</section>
+                </div>
+                <div class="hotel-adress-bottom">四川省成都市锦江区合江亭滨江东路9号</div>
+            </div>
+
+            <div class="check-in-info">
+                <div class="hotel-adress-top">
+                    <section class="hotel-name">香格里拉大床房</section>
+                    <section class="hotel-blue">查看详情</section>
+                </div>
+
+                <div class="user-info">
+
+                    <div class="user-info-all">
+                        <div class="user-info-l">入住时间</div>
+                        <div class="user-info-r">2020-22-22</div>
+                    </div>
+
+                    <div class="user-info-all">
+                        <div class="user-info-l">退房时间</div>
+                        <div class="user-info-r">2020-22-22</div>
+                    </div>
+
+                    <div class="user-info-all">
+                        <div class="user-info-l">入住人</div>
+                        <div class="user-info-r">是是是</div>
+                    </div>
+
+                    <div class="user-info-all">
+                        <div class="user-info-l">房间数量</div>
+                        <div class="user-info-r">220-22-22</div>
+                    </div>
+
+                    <div class="user-info-all">
+                        <div class="user-info-l">预计到店</div>
+                        <div class="user-info-r">14:00</div>
+                    </div>
+
+                    <div class="user-info-all-input">
+                        <div class="user-info-l">备注信息</div>
+                        <div class="user-info-input"><input type="text" placeholder="备注"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="check-in-info">
+                <div class="hotel-adress-top">
+                    <section class="hotel-name">费用明细</section>
+                </div>
+
+                <div class="user-info cost">
+                    <div class="user-info-all">
+                        <div class="user-info-l user-cost">￥378 X 1晚 X 1间</div>
+                        <div class="user-info-r cost-color cost-red">￥378.00</div>
+                    </div>
+
+                    <div class="user-info-all">
+                        <div class="user-info-l user-cost">￥378 X 1晚 X 1间</div>
+                        <div class="user-info-r cost-color cost-red">￥378.00</div>
+                    </div>
+
+                    <div class="user-info-all">
+                        <div class="user-info-l user-cost">钻石会员8.5折</div>
+                        <div class="user-info-r cost-color cost-green">￥378.00</div>
+                    </div>
+                </div>
+
+                <div class="all-cost">
+                    <div class="user-info-all costall">
+                        <div class="user-info-l user-cost">总金额(<span class="cost-green">已省78</span>)</div>
+                        <div class="user-info-r cost-color cost-red">￥378.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="check-in-info">
+                <div class="hotel-adress-top">
+                    <section class="hotel-name">订单信息</section>
+                </div>
+
+                <div class="user-info">
+                    <div class="user-info-all">
+                        <div class="user-info-l">订单号</div>
+                        <div class="user-info-r"><span>9886347863782587354872</span><span class="copy">复制</span></div>
+                    </div>
+
+                    <div class="user-info-all">
+                        <div class="user-info-l">下单时间</div>
+                        <div class="user-info-r">2020-06-18 22:02</div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </main>
+    </div>
+
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function ({
+            openWin,
+            closeWin,
+
+        }) {
+            new Vue({
+                el: ".container",
+
+                data() {
+                    return {}
+                },
+
+                methods: {
+                    goBackHandler() {
+                        closeWin()
+                    },
+                },
+            })
+
+        })
+    </script>
+</body>
+
+</html>

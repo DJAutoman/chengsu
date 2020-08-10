@@ -1,0 +1,163 @@
+body {
+    background: rgb(250, 250, 250);
+}
+
+.head {
+    padding: 1.2rem 0.4rem 0;
+}
+
+
+.head-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.96rem;
+}
+
+.awater {
+    width: 1.28rem;
+    margin-right: 0.32rem;
+}
+
+.awater img {
+    width: 100%;
+}
+
+.awater-text {
+    color: #FFFFFF;
+    font-size: 0.34rem;
+}
+
+.head-describe {
+    font-size: 0.26rem;
+    line-height: 0.5rem;
+}
+
+.head-bottom {
+    padding: 0.18rem 0.4rem;
+    background: linear-gradient(98.15deg, #FFDD86 0%, #FFEEBC 100%);
+    border-radius: 8px 8px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.member {
+    width: 2.6rem;
+}
+
+.member img {
+    width: 100%;
+}
+
+.member-btn {
+    background: white;
+    padding: 0.08rem 0.32rem;
+    border-radius: 99px;
+    color: #680303;
+    font-weight: 600;
+    font-size: 0.28rem;
+}
+
+/* 三角 */
+.triangle {
+    width: 22px;
+    height: 13px;
+    background: linear-gradient(98.15deg, #FFDD86 0%, #FFEEBC 100%);
+    margin: 0 auto;
+    -webkit-clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+/*  */
+
+.inviter {
+    padding: 0 0.4rem;
+    margin: 0.22rem 0 0.48rem;
+}
+
+.invite img {
+    width: 100%;
+    background: linear-gradient(163.87deg, #FE0000 0%, #FAA19C 102.22%);
+    border-radius: 4px;
+    margin-bottom: 0.48rem;
+}
+
+/* .share-fans {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.sf {
+    /* width: 3.2rem; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 0.24rem;
+    border-radius: 4px;
+    background: white;
+}
+/* 
+.share {
+    margin-right: 0.3rem;
+} */
+
+.sf-title {
+    color: #bdbdbd;
+    font-weight: 600;
+    font-size: 0.28rem;
+    margin-bottom: 0.36rem;
+}
+
+.sf-num {
+    color: #424242;
+    font-weight: 600;
+    font-size: 0.36rem;
+}
+
+.sf-img {
+    width: 2.94rem;
+}
+
+.sf-img img {
+    width: 100%;
+    vertical-align: bottom;
+
+}
+
+.methods {
+    font-size: 0.34rem;
+    color: #757575;
+}
+
+.method {
+    margin-bottom: 0.32rem;
+}
+
+.two-method {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.32rem;
+    background: white;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.method-icon {
+    width: 0.5rem;
+    margin-right: 0.24rem;
+}
+
+.method-icon img {
+    width: 100%;
+}
+
+.method-title {
+    flex: 1;
+}
+
+.arrow-right {
+    width: 0.48rem;
+}
+
+.arrow-right img {
+    width: 100%;
+}

@@ -1,0 +1,166 @@
+.container{
+    padding: 0 0.4rem;
+}
+.head-search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    margin-top: 0.88rem;
+}
+.search-icon {
+    /* white-space: nowrap; */
+padding: 0.24rem 0.16rem 0.24rem 0.32rem;
+border-right: 1px solid #EEEEEE;
+}
+
+.search-icon img{
+    width: 0.12rem;
+    height: 0.24rem;
+    margin-right:0.24rem;
+}
+
+.search-icon span{
+    font-size: 0.34rem;
+    color: var(--c);
+}
+
+.search-input{
+    width: 3.6rem;
+    margin:0 0.16rem;
+    display: flex;
+    align-items: center;
+}
+
+.search-input img{
+    width: 0.48rem;
+    height: 0.48rem;
+    margin-right: 0.18rem;
+}
+
+.search-input input{
+    flex: 1;
+    width: 100%;
+}
+
+.search-time{
+    font-size: 0.26rem;
+    /* white-space: nowrap; */
+    margin-right: 0.16rem;
+    color: var(--c);
+}
+
+main{
+    padding-top:0.72rem ;
+}
+
+.total-room{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.eaves{
+    color: #212121;
+    font-size: 0.34rem;
+    font-weight: 600;
+}
+
+.pull-down{
+    font-size: 0.26rem;
+    display: flex;
+}
+
+.pull-down section{
+    display: flex;
+    align-items: center;
+    margin-left: 0.24rem;
+}
+
+.pull-down img{
+    width: 0.24rem;
+    height: 0.12rem;
+}
+
+.yellow{
+    color: #F9A825;
+}
+
+.blue{
+    color: #0091EA;
+}
+/*  */
+.resource-list{
+    display: flex;
+    border-radius: 4px;
+    margin: 0.32rem 0;
+}
+
+.list-pic{
+    width: 2.4rem;
+}
+
+.list-pic img{
+    width: 100%;
+}
+
+.list-right{
+    padding: 0.16rem 0.32rem;
+    flex: 1;
+    position: relative;
+}
+
+.list-top-title{
+    font-weight: 600;
+    font-size: 0.28rem;
+    color: #212121;
+}
+
+.list-top-star{
+    display: flex;
+}
+.star-box{
+    width: 0.26rem;
+    margin-right: 0.08rem;
+}
+
+.star-box img{
+    width: 100%;
+}
+
+.distance{
+    display: flex;
+    align-items: center;
+    color: #757575;
+    font-size: 0.26rem;
+}
+.distance img{
+    width: 0.26rem;
+    margin-right: 0.08rem;
+}
+
+.list-price{
+    font-size: 0.22rem;
+    color: #bdbdbd;
+    position: absolute;
+    bottom: 0.16rem;
+    right: 0.16rem;
+}
+.list-price span{
+    font-weight: 600;
+    font-size: 0.28rem;
+    color: var(--c);
+}
+
+/* 秒杀 */
+.seckill-banner{
+    margin-top: -0.24rem;
+    margin-bottom: 0.48rem;
+}
+.seckill-banner img{
+width: 100%;
+}
+
+.distance,span{
+    color: var(--c);
+}

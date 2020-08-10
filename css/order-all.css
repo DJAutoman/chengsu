@@ -1,0 +1,85 @@
+.head-title{
+    font-weight: 600;
+    font-size: 0.34rem;
+    color: #212121;
+    opacity: 0.9;
+    text-align: center;
+    padding: 1.12rem 0 0.5rem;
+}
+main{
+    padding: 0rem 0.4rem;
+}
+.option{
+    font-size: 0.28rem;
+    color: #757575;
+    line-height: 0.44rem;
+    padding: 0.24rem 0.32rem 0.32rem;
+    margin-bottom: 0.4rem;
+}
+.bookday{
+    font-size: 0.26rem;
+    color: #0091EA;
+}
+.option-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.24rem;
+    border-bottom: 1px solid #eeeeee;
+}
+.title-left{
+    font-weight: 600;
+    font-size: 0.34rem;
+    color: #212121;
+}
+
+.title-status{
+    font-weight: 600;
+}
+
+.option-content {
+    padding-top: 0.24rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.option-img{
+    width: 1.32rem;
+}
+
+.option-img img{
+    width: 100%;
+}
+
+.option-content-right{
+    flex: 1;
+    margin-left: 0.16rem;
+}
+
+
+.option-price{
+    font-weight: 600;
+    color: var(--c);
+}
+
+.btns{
+    text-align: right;
+}
+
+.btns button{
+ padding: 0.16rem 0.24rem;
+ border-radius: 99px;
+}
+.quxiao{
+    border: 1px solid #757575 ;
+    color: #757575;
+    margin-right: 0.16rem;
+
+}
+.gradient-ramp{
+    border: none;
+    outline: none;
+    color: white;
+}
+

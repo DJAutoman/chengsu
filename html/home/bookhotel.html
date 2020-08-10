@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预订</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/bookhotel.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="head-bg">
+            <img src="../../image/hotellist/hotel-head-bg.png" alt="">
+            <div class="head-back">
+                <div class="head-back-l" @click="goBackHotelList"><img src="../../image/icon/arrow-left-white.png"
+                        alt=""></div>
+                <div class="head-back-r"><img src="../../image/icon/picture.png" alt=""><span>120张</span></div>
+            </div>
+        </div>
+
+        <main>
+            <div class="navigation dash">
+                <div class="navigation-title">东莞大酒店</div>
+                <div class="navigation-describe">四川省成都市锦江区合江亭滨江东路9号</div>
+                <div class="navigation-icon">
+                    <span>商旅大床套房</span>
+                </div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-time">
+                    <div class="detail-time-flex">
+                        <div class="detail-time-left"><img src="../../image/home/time.png" alt=""><span>入住时间</span>
+                        </div>
+                        <div class="detail-time-right"><img src="../../image/home/time.png" alt=""><span>退房时间</span>
+                        </div>
+                    </div>
+                    <div class="detail-time-bottom">
+                        <div class="before">2020-20-20</div>
+                        <div class="night">1晚</div>
+                        <div class="after">1111-11-11</div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <div class="content">
+
+            <div class="order-info">
+                <div class="order-info-title">订单信息</div>
+
+                <div class="order-detail">
+                    <div class="order-clo" @click.stop="ImgRotate">
+                        <section class="clo0">房间数量</section>
+                        <section class="clo1">
+                            <div class="room-num-default" :style="{display:open?'none':'block'}">选择预定房价数量</div>
+                            {{roomHouseNum}}
+                        </section>
+                        <section class="clo2" :style="ImgRotation"><img src="../../image/icon/arrow-right.png" alt="">
+                        </section>
+                    </div>
+
+                    <div class="order-num" v-if="ShowHidden">
+                        <div @click="chooseNum(index)" class="room-list"
+                            :class="{'room-num-bcg':index==(roomHouseNum1-1)}" v-for="(item,index) in roomListArr"
+                            :key="index">{{item}}</div>
+                    </div>
+
+
+                    <div class="order-clo" v-for="(item,index) in newRoomListArr" :key="index">
+                        <section class="clo0">房间{{index+1}}</section>
+                        <section class="clo1">憨八龟</section>
+                        <section class="clo2"><img src="../../image/icon/arrow-right.png" alt=""></section>
+                    </div>
+
+
+                    <div class="order-clo">
+                        <section class="clo0">预计到店</section>
+                        <section class="clo1">24:00</section>
+                        <section class="clo2"><img src="../../image/icon/arrow-right.png" alt=""></section>
+                    </div>
+
+                    <div class="order-clo">
+                        <section class="clo0">备注信息</section>
+                        <section class="clo1"><input placeholder="最多50字" type="text"></section>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="order-info-title">费用明细</div>
+
+            <div class="muchnight">
+                <div class="muchnight-top">
+                    <div class="muchnight-top-t">
+                        <div>￥378 X 1晚</div>
+                        <div class="chnight-top-tr">￥378</div>
+                    </div>
+                    <div class="muchnight-top-b">
+                        <div>钻石会员8.5折</div>
+                        <div class="chnight-top-br">-￥78</div>
+                    </div>
+                </div>
+                <div class="muchnight-bottom">
+                    <div class="mutotal">总金额(<span class="chnight-top-br">已省78</span>)</div>
+                    <div class="chnight-top-tr">￥300</div>
+                </div>
+            </div>
+        </div>
+
+        <!--固定定位 btn -->
+        <button class="btn-style gradient-ramp"><span>立即预订</span></button>
+
+    </div>
+
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function ({
+            post,
+            openWin,
+            closeWin,
+        }) {
+            new Vue({
+                el: ".container",
+
+                data() {
+                    return {
+                        roomListArr: [1, 2, 3, 4],
+                        ShowHidden: false,
+                        newRoomListArr: [],
+                        roomHouseNum: "",
+                        roomHouseNum1: 0,
+                        open:false,
+                    }
+
+                },
+
+                computed: {
+                    ImgRotation() {
+                        return {
+                            transform: this.ShowHidden ? 'rotate(90deg)' : 'rotate(0deg)',
+                        }
+                    },
+                },
+                methods: {
+
+                    //返回上一页
+                    goBackHotelList() {
+                        closeWin()
+                    },
+                    //选择房间数右箭头转向
+                    ImgRotate() {
+                        this.ShowHidden = !this.ShowHidden
+                        // post(`/api/cs/guest/list`,{
+                        //     pageIndex:1,
+                        //     pageSize:10,
+                        // },(res,err)=>{
+                        //     if (err) {
+                        //       console.log('err:' + JSON.stringify(err))
+                        //     }
+                        //     console.log(JSON.stringify(res));
+                        // })
+                    },
+                    //点击选择房间数
+                    chooseNum(index) {
+                        this.open=true;
+                        for (const iterator of this.roomListArr) {
+                            if (index === iterator - 1) {
+                                this.roomHouseNum = iterator + "间";
+                                this.roomHouseNum1 = iterator;
+                            }
+                        };
+                        this.newRoomListArr = this.roomListArr.slice(0, this.roomHouseNum1);
+                    }
+                },
+            })
+
+        })
+    </script>
+</body>
+
+</html>

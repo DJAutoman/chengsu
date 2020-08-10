@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人资料</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/userinfo.css">
+</head>
+<body>
+    <div class="container">
+<!--        <div class="head-title">-->
+<!--            <div class="back-btn"><img src="../../image/icon/arrow-left.png" alt=""></div>-->
+<!--            <span>个人资料</span>-->
+<!--            <span class="head-right"></span>-->
+<!--        </div>-->
+        <pub-header @back="goBackHandler"><span slot="center">个人资料</span><span slot="right"></span></pub-header>
+
+
+        <main>
+         <div class="user">
+             <div class="awater">
+                 <div class="user-text">头像</div>
+                 <div class="awater-right">
+                     <div class="awater-right-pic"><img src="../../image/mine/awater.png" alt=""></div>
+                     <div class="go-btn"><img src="../../image/icon/arrow-right.png" alt=""></div>
+                 </div>
+             </div>
+
+             <div class="user-pad">
+                <div class="user-text">昵称</div>
+                <div class="awater-right">
+                    <div class="awater-right-text">成熟美男</div>
+                    <div class="go-btn"><img src="../../image/icon/arrow-right.png" alt=""></div>
+                </div>
+            </div>
+
+         </div>
+
+         <div class="user-info">
+            <div class="user-pad" @click="goChangePassword">
+                <div class="user-text">更改密码</div>
+                <div class="awater-right">
+                    <div class="awater-right-text"></div>
+                    <div class="go-btn"><img src="../../image/icon/arrow-right.png" alt=""></div>
+                </div>
+            </div>
+
+            <div class="user-pad">
+                <div class="user-text">绑定手机号</div>
+                <div class="awater-right">
+                    <div class="awater-right-text">187****5489</div>
+                    <div class="go-btn"><img src="../../image/icon/arrow-right.png" alt=""></div>
+                </div>
+            </div>
+
+            <div class="user-pad">
+                <div class="user-text">身份证</div>
+                <div class="awater-right">
+                    <div class="awater-right-text">187****5489</div>
+                    <div class="go-btn"><img src="../../image/icon/arrow-right.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+       </main>
+
+    </div>
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function ({
+                                openWin,
+                                closeWin,
+                                importVue,
+
+                            }) {
+            const components = importVue(['widget://component/pub-header.vue'])
+            new Vue({
+                el: ".container",
+                components,
+
+                data() {
+                    return {}
+                },
+
+                methods: {
+                    goBackHandler() {
+                        closeWin()
+                    },
+                    //更改密码
+                    goChangePassword(){
+                        openWin('goChangePassword',"widget://html/mine/change-password.html",null)
+                    },
+                },
+            })
+
+        })
+    </script>
+</body>
+</html>

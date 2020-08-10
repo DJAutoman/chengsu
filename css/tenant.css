@@ -1,0 +1,52 @@
+.head-title{
+    font-weight: 600;
+    font-size: 0.34rem;
+    color: #212121;
+    opacity: 0.9;
+    text-align: center;
+    padding: 1.12rem 0.6rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.back-btn{
+    width: 1.2rem;
+    text-align: left;
+}
+.head-title img{
+    width: 0.12rem;
+    height: 0.24rem;
+}
+.head-right{
+    width: 1.2rem;
+    color: var(--c);
+    font-size: 0.28rem;
+}
+
+main{
+    padding: 0 0.4rem;
+}
+
+
+.awater{
+    width: 1.32rem;
+    margin-right: 0.28rem;
+}
+
+.awater img{
+    width: 100%;
+}
+
+.tenant-list{
+    display: flex;
+    align-items: center;
+    font-size: 0.28rem;
+    color: #757575;
+    padding: 0.32rem;
+    border-radius: 4px;
+    margin-bottom: 0.32rem;
+}
+
+.tenant-name{
+    color: #212121;
+}

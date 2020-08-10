@@ -1,0 +1,274 @@
+body,
+.container {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 10.84%, #F5F5F5 37.93%);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0.4rem 0.12rem;
+}
+
+.title-icon {
+    width: 0.64rem;
+    margin-right: 0.12rem;
+}
+
+.title-icon img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.title-city {
+    color: white;
+    font-size: 0.28rem;
+    display: flex;
+    align-items: center;
+    margin-right: 0.4rem;
+}
+
+.title-city img {
+    width: 0.32rem;
+    height: 0.32rem;
+}
+
+.title-ipt {
+    flex: 1;
+    padding-left: 0.32rem;
+}
+
+.title-ipt input {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 99px;
+    height: 0.56rem;
+    text-indent: 0.32rem;
+    color: #212121;
+}
+
+input::-webkit-input-placeholder {
+    color: #BDBDBD;
+    font-size: 0.28rem;
+    text-indent: 0.32rem;
+}
+
+main {
+    padding: 0.48rem 0;
+}
+.liantong{
+    padding: 0 0.4rem;
+}
+.liantongka img {
+    width: 100%;
+}
+
+.home-methods {
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 0.4rem;
+}
+
+.method {
+    width: 1.14rem;
+    margin: 0 0.7rem 0.32rem 0;
+}
+
+.method:nth-child(4n) {
+    margin-right: 0;
+}
+
+.method-img {
+    width: 100%;
+}
+
+.method-img img {
+    width: 100%;
+}
+
+.method-text {
+    color: black;
+    text-align: center;
+    font-size: 0.28rem;
+    line-height: 0.5rem;
+}
+
+.course {
+    padding: 0 0.4rem 0.48rem;
+    margin-bottom: 0.48rem;
+    background: white;
+}
+
+.course-text {
+    font-size: 0.4rem;
+    color: #212121;
+    font-weight: 600;
+}
+
+.course-pic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-new {
+    width: 1.96rem;
+}
+
+.course-img {
+    width: 100%;
+    margin: 0.28rem 0 0.12rem;
+}
+
+.course-img img {
+    width: 100%;
+}
+
+.course-load {
+    color: #212121;
+    font-size: 0.28rem;
+    text-align: center;
+}
+
+.special-kill {
+    background: white;
+    padding: 0.32rem 0;
+    margin-bottom: 0.48rem;
+}
+
+.kill-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 0.4rem;
+    margin-bottom: 0.24rem;
+}
+
+.kill-r {
+    color: var(--c);
+    font-size: 0.26rem;
+}
+
+.kill-banner {
+    height: 160px;
+    background: saddlebrown;
+}
+
+.sift-hotel {
+    padding: 0.32rem 0.4rem;
+    margin-bottom: 0.48rem;
+    background: white;
+}
+
+.sift-top {
+    display: flex;
+    align-items: center;
+}
+
+.arrow-red {
+    width: 0.26rem;
+    height: 0.26rem;
+}
+
+/* 酒店 */
+.resource-list {
+    display: flex;
+    border-radius: 4px;
+    margin: 0.32rem 0;
+}
+
+.list-pic {
+    width: 2.4rem;
+}
+
+.list-pic img {
+    width: 100%;
+}
+
+.list-right {
+    padding: 0.16rem 0.32rem;
+    flex: 1;
+    position: relative;
+}
+
+.list-top-title {
+    font-weight: 600;
+    font-size: 0.28rem;
+    color: #212121;
+}
+
+.list-top-star {
+    display: flex;
+}
+
+.star-box {
+    width: 0.26rem;
+    margin-right: 0.08rem;
+}
+
+.star-box img {
+    width: 100%;
+}
+
+.distance {
+    display: flex;
+    align-items: center;
+    color: #757575;
+    font-size: 0.26rem;
+}
+
+.distance img {
+    width: 0.26rem;
+    margin-right: 0.08rem;
+}
+
+.list-price {
+    font-size: 0.22rem;
+    color: #bdbdbd;
+    position: absolute;
+    bottom: 0.16rem;
+    right: 0.16rem;
+}
+
+.list-price span {
+    font-weight: 600;
+    font-size: 0.28rem;
+    color: var(--c);
+}
+
+/*  */
+.kill-pad {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.24rem;
+}
+
+/* 线路精选 */
+.rectangle-c {
+    position: relative;
+    margin-bottom: 0.32rem;
+}
+
+.rectangle-img img {
+    width: 100%;
+}
+
+.rectangle-text {
+    position: absolute;
+    left: 0.32rem;
+    bottom: 0.24rem;
+    color: white;
+    font-size: 0.28rem;
+}
+
+/*  */
+.AAAAA {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.26rem;
+    opacity: 0.75;
+    margin-top: 0.08rem;
+}

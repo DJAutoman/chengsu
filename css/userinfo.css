@@ -1,0 +1,80 @@
+.container,body{
+    background: rgb(250,250,250);
+}
+.head-title{
+    font-weight: 600;
+    font-size: 0.34rem;
+    color: #212121;
+    opacity: 0.9;
+    text-align: center;
+    padding: 1.12rem 0.6rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+.back-btn{
+    width: 1.2rem;
+    text-align: left;
+}
+.head-title img{
+    width: 0.12rem;
+    height: 0.24rem;
+}
+.head-right{
+    width: 1.2rem;
+    color: var(--c);
+    font-size: 0.28rem;
+}
+
+main{
+    margin-top: 0.32rem;
+    font-size: 0.34rem;
+    color: #212121;
+}
+.user{
+    background: white;
+}
+.awater{
+    padding: 0.24rem 0.4rem ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(250, 250, 250);
+}
+
+.awater-right{
+    display: flex;
+    align-items: center;
+}
+.awater-right-pic{
+    width: 1.28rem;
+    margin-right: 0.1rem;
+}
+.awater-right-pic img{
+    width: 100%;
+}
+
+.go-btn{
+    width: 0.48rem;
+    margin-left: 0.34rem;
+}
+.go-btn img{
+    width: 100%;
+}
+
+.user-pad{
+    padding: 0.36rem 0.4rem ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(250, 250, 250);
+}
+.awater-right-text{
+    color: #757575 ;
+}
+
+.user-info{
+    margin-top: 0.64rem;
+    background: white;
+}

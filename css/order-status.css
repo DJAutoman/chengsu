@@ -1,0 +1,128 @@
+header{
+    background: url('../image/order/order-status-head.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top left;
+    height: 4.24rem;
+    color: white;
+    padding: 0 0.4rem;
+}
+
+.arrow-left{
+    width: 0.12rem;
+    height: 0.24rem;
+    margin: 1.12rem 0 0.48rem;
+}
+.unpaid-a{
+    font-weight: 600;
+    font-size: 0.4rem;
+}
+
+.unpaid-low{
+    margin-top: 0.08rem;
+    font-size: 0.28rem;
+}
+
+.order-btn{
+    display: flex;
+    align-items: center;
+    margin: 0.32rem 0;
+    font-weight: 600;
+}
+
+.order-btn-l,.order-btn-r{
+    margin-right: 0.32rem;
+    padding: 0.16rem 0.48rem;
+    border: 1px solid white;
+    border-radius: 99px;
+    font-size: 0.28rem;
+}
+.order-btn-l{
+    color: var(--c);
+    background: white;
+}
+.check-in-info{
+    border-bottom: 1px solid #eeeeee;
+}
+.hotel-adress{
+    padding: 0.4rem;
+    font-size: 0.26rem;
+    color: #757575;
+    border: 1px solid #eeeeee;
+}
+.hotel-adress-top{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    margin-bottom: 0.16rem;
+}
+.hotel-name{
+    font-size: 0.34rem;
+    font-weight: 600;
+    color: #212121;
+}
+.hotel-blue{
+    color: #0091EA;
+    font-size: 0.26rem;
+}
+
+.check-in-info{
+    padding: 0.4rem;
+}
+.user-info{
+    margin-top: 0.4rem;
+    font-size: 0.28rem;
+}
+
+.user-info-all{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.16rem;
+}
+.user-info-l{
+    color: #757575;
+}
+.user-info-r{
+    color: #212121;
+}
+
+.user-info-all-input{
+    display: flex;
+    align-items: center;
+}
+
+.user-info-input{
+    flex: 1;
+    margin-left: 0.2rem;
+}
+.user-info-input input{
+    width: 100%;
+}
+.cost{
+    padding-bottom: 0.16rem;
+    border-bottom: 1px solid #eeeeee;
+}
+.user-cost{
+    color: #212121;
+}
+.cost-color{
+    font-weight: 600;
+}
+
+.cost-red{
+    color:var(--c)
+}
+.cost-green{
+    color: #66BB6A;
+}
+.costall{
+    margin-bottom: -0.16rem;
+    margin-top: 0.28rem;
+    font-size: 0.28rem;
+}
+
+.copy{
+    margin-left: 0.24rem;
+    color: #0091EA;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/mine.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="head gradient-ramp">
+            <div class="head-top">
+                <div class="awater" @click="goUserInfo"><img src="../../image/mine/awater.png" alt=""></div>
+                <div class="awater-text">
+                    <div class="head-name">城宿美男许墨</div>
+                    <div class="head-describe">大会员大保健安排</div>
+                </div>
+            </div>
+            <div class="head-bottom">
+                <div class="member"><img src="../../image/mine/member.png" alt=""></div>
+                <div class="member-btn">立即开通</div>
+            </div>
+        </div>
+        <div class="triangle"></div>
+
+        <div class="inviter">
+            <div class="invite"><img src="../../image/mine/mine-ban.png" alt=""></div>
+            <div class="share-fans">
+                <!-- <div class="share sf">
+                    <div class="share-text">
+                        <section class="sf-title">我的分享</section>
+                        <section class="sf-num">1234</section>
+                    </div>
+                    <div class="share-img sf-img"><img src="../../image/mine/share.png" alt=""></div>
+                </div> -->
+                <div class="fans sf dash" @click="toFans">
+                    <div class="fans-text">
+                        <section class="sf-title">我的粉丝</section>
+                        <section class="sf-num">1234</section>
+                    </div>
+                    <div class="fans-img sf-img"><img src="../../image/mine/newfans.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="methods">
+            <div class="method">
+                <div class="two-method">
+                    <div class="method-icon"><img src="../../image/mine/mine1.png" alt=""></div>
+                    <div class="method-title">提现方式</div>
+                    <div class="arrow-right"><img src="../../image/icon/arrow-right.png" alt=""></div>
+                </div>
+
+                <div class="two-method">
+                    <div class="method-icon"><img src="../../image/mine/mine2.png" alt=""></div>
+                    <div class="method-title">常用房客</div>
+                    <div class="arrow-right"><img src="../../image/icon/arrow-right.png" alt=""></div>
+                </div>
+            </div>
+
+            <div class="method">
+                <div class="two-method">
+                    <div class="method-icon"><img src="../../image/mine/mine3.png" alt=""></div>
+                    <div class="method-title">平台介绍</div>
+                    <div class="arrow-right"><img src="../../image/icon/arrow-right.png" alt=""></div>
+                </div>
+
+                <div class="two-method">
+                    <div class="method-icon"><img src="../../image/mine/mine4.png" alt=""></div>
+                    <div class="method-title">意见反馈</div>
+                    <div class="arrow-right"><img src="../../image/icon/arrow-right.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function ({
+            openWin,
+            closeWin,
+        }) {
+            new Vue({
+                el: ".container",
+
+                data() {
+                    return {}
+                },
+
+                methods: {
+                    //跳转粉丝
+                    toFans() {
+                        openWin('fans', "widget://html/mine/fans.html", null)
+                    },
+                //    我的信息
+                    goUserInfo(){
+                        openWin('goUserInfo', "widget://html/mine/userinfo.html", null)
+                    },
+                },
+            })
+
+        })
+    </script>
+</body>
+
+</html>

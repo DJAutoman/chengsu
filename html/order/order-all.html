@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全部订单</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/order-all.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- <div class="head-title"><span>全部订单</span></div> -->
+        <pub-header @back="goBackHandler"><span slot="center">全部订单</span><span slot="right"></span></pub-header>
+
+
+        <!-- main -->
+        <main>
+            <div class="options">
+                <div class="">
+                    <div class="bookday">预订日期:2019-08-24</div>
+                    <div class="option dash">
+                        <div class="option-title">
+                            <section class="title-left">香格里拉酒店</section>
+                            <section class="title-status">已完成</section>
+                        </div>
+
+                        <div class="option-content">
+                            <div class="option-img"><img src="../../image/order/order-all.png" alt=""></div>
+                            <div class="option-content-right">
+                                <div class=""><span>轻奢商务双床房&nbsp;&nbsp;1间</span></div>
+                                <div class="">2020-01-10 ~ 2020-01-12&nbsp;&nbsp;2晚</div>
+                                <div class="option-price">￥321.3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="">
+                <div class="bookday">预订日期:2019-08-24</div>
+                <div class="option dash">
+                    <div class="option-title">
+                        <section class="title-left">香格里拉酒店</section>
+                        <section class="title-status">已完成</section>
+                    </div>
+
+                    <div class="option-content">
+                        <div class="option-img"><img src="../../image/order/order-all.png" alt=""></div>
+                        <div class="option-content-right">
+                            <div class=""><span>轻奢商务双床房&nbsp;&nbsp;1间</span></div>
+                            <div class="">2020-01-10 ~ 2020-01-12&nbsp;&nbsp;2晚</div>
+                            <div class="option-price">￥321.3</div>
+                        </div>
+                    </div>
+
+                    <div class="option-btn">
+                        <div class="btns">
+                            <button class="quxiao">取消订单</button>
+                            <button class="gradient-ramp">立即支付</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function ({
+            openWin,
+            closeWin,
+            importVue,
+
+        }) {
+            const components = importVue(['widget://component/pub-header.vue'])
+            new Vue({
+                el: ".container",
+                components,
+
+                data() {
+                    return {}
+                },
+
+                methods: {
+                    goBackHandler() {
+                        closeWin()
+                    },
+                },
+            })
+
+        })
+    </script>
+</body>
+
+</html>

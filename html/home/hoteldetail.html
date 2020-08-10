@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酒店详情</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/hoteldetail.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="head-bg">
+            <img src="../../image/hotellist/hotel-head-bg.png" alt="">
+            <div class="head-back">
+                <div class="head-back-l" @click="goBackHandler"><img src="../../image/icon/arrow-left-white.png" alt=""></div>
+                <div class="head-back-r"><img src="../../image/icon/picture.png" alt=""><span>120张</span></div>
+            </div>
+        </div>
+
+        <main>
+            <div class="navigation dash">
+                <div class="navigation-title">东莞大酒店</div>
+                <div class="navigation-describe">四川省成都市锦江区合江亭滨江东路9号</div>
+                <div class="navigation-icon">
+                    <div class="navigation-icon-left">
+                        <img src="../../image/icon/nav.png" alt="">
+                        <span>地图/导航</span>
+                    </div>
+                    <div class="navigation-icon-right" @click="goHotelIntroduce">详情</div>
+                </div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-time">
+                    <div class="detail-time-flex">
+                        <div class="detail-time-left"><img src="../../image/home/time.png" alt=""><span>入住时间</span>
+                        </div>
+                        <div class="detail-time-right"><img src="../../image/home/time.png" alt=""><span>退房时间</span>
+                        </div>
+                    </div>
+                    <div class="detail-time-bottom">
+                        <div class="before">2020-20-20</div>
+                        <div class="night">1晚</div>
+                        <div class="after">1111-11-11</div>
+                    </div>
+                </div>
+
+                <div class="detail-list">
+
+                    <div class="one-list">
+                        <div class="list-img"><img src="../../image/hotellist/hoteltest.png" alt=""></div>
+                        <div class="list-text">
+                            <div class="list-text-title">
+                                <div class="list-text-title-top">爱心大床</div>
+                                <div class="list-text-title-bottom">仅剩最后3间</div>
+                            </div>
+                            <div class="list-text-top">不含早 35㎡ 大床 2人 入住</div>
+                            <div class="list-text-mid">2020-06-18 19:00前可免费取消</div>
+                            <div class="list-text-bottom">
+                                <div>城宿会员价 <span>￥<span>178</span></span></div>
+                                <div class="ding" @click="goBookHotel">订</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="one-list">
+                        <div class="list-img"><img src="../../image/hotellist/hoteltest.png" alt=""></div>
+                        <div class="list-text">
+                            <div class="list-text-title">
+                                <div class="list-text-title-top">爱心大床</div>
+                                <div class="list-text-title-bottom">仅剩最后3间</div>
+                            </div>
+                            <div class="list-text-top">不含早 35㎡ 大床 2人 入住</div>
+                            <div class="list-text-mid">2020-06-18 19:00前可免费取消</div>
+                            <div class="list-text-bottom">
+                                <div>城宿会员价 <span>￥<span>178</span></span></div>
+                                <div class="ding">订</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function ({
+            openWin,
+            closeWin,
+        }) {
+            new Vue({
+                el: ".container",
+
+                data() {
+                    return {
+                        firstDate:api.pageParam.firstDate,
+                        secondDate:api.pageParam.secondDate,
+                        hotelId:api.pageParam.hotelId,
+                    }
+                },
+                mounted () {
+                    console.log(this.firstDate + this.secondDate + this.hotelId);
+                },
+
+                methods: {
+                    goBackHandler() {
+                        closeWin()
+                    },
+                    goHotelIntroduce() {
+                        openWin('goHotelIntroduce', "widget://html/home/hotelintroduce.html", {
+                            hotelId:this.hotelId
+                        })
+                    },
+                    goBookHotel(){
+                        openWin('goBookHotel', "widget://html/home/bookhotel.html", null)
+                    }
+                },
+            })
+
+        })
+    </script>
+</body>
+
+</html>

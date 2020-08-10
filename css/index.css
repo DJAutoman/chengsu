@@ -1,0 +1,279 @@
+html{
+  font-family: sans-serif;
+}
+html,body,header,section,footer,div,ul,ol,li,img,a,span,em,del,legend,center,strong,var,fieldset,form,label,dl,dt,dd,cite,input,hr,time,mark,code,figcaption,figure,textarea,h1,h2,h3,h4,h5,h6,p{
+  margin:0;
+  border:0;
+  padding:0;
+  font-style:normal;
+}
+html,body {
+  -webkit-touch-callout:none;
+  -webkit-text-size-adjust:none;
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+  -webkit-user-select:none;
+}
+nav,article,aside,details,main,header,footer,section,fieldset,figcaption,figure{
+  display: block;
+}
+img,a,button,em,del,strong,var,label,cite,small,time,mark,code,textarea{
+  display:inline-block;
+}
+header,section,footer {
+  position:relative;
+}
+ol,ul{
+  list-style:none;
+}
+input,button,textarea {
+  border:0;
+  margin:0;
+  padding:0;
+  font-size:1em;
+  line-height:1em;
+  /*-webkit-appearance:none;*/
+  background-color:rgba(0, 0, 0, 0);
+}
+span{
+  display:inline-block;
+}
+a:active, a:hover {
+  outline: 0;
+}
+a, a:visited{
+  text-decoration:none;
+}
+
+label, .wordWrap{
+  word-wrap: break-word;
+  word-break: break-all;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,th {
+  padding: 0;
+}
+button,input,textarea {
+    outline: none;
+}
+.clearfix:after{
+  content: ' ';
+  display: block;
+  clear: both;
+  visibility:hidden;
+  line-height: 0;
+  height:0;
+}
+.loading_more{
+  display: block;
+  height: 1.5em;
+  width: 100%;
+}
+.loading_more:before {
+  display: inline-block; vertical-align: text-bottom;
+  content: ' '; height: 16px; width: 16px; margin-right: 6px;
+  background: url(../image/loading_more.gif) no-repeat center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.loading_more:after {
+  content: '加载更多';
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 42.6667px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 53.3333px;
+  }
+}
+
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 55.2px;
+  }
+}
+
+@media screen and (min-width: 440px) {
+  html {
+    font-size: 58.6667px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 64px;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  html {
+    font-size: 69.3333px;
+  }
+}
+
+@media screen and (min-width: 560px) {
+  html {
+    font-size: 74.6667px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 80px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 85.3333px;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  html {
+    font-size: 90.6666px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 96px;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  html {
+    font-size: 101.3333px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 106.6666px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  html {
+    font-size: 128px;
+  }
+}
+body {
+  font-size: 0.34rem;
+}
+html,
+body {
+    height: 100%;
+    background: #ffffff;
+}
+
+.hover {
+    opacity: .8;
+}
+
+.flex-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-con {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.flex-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+}
+
+.border-t,
+.border-b {
+    position: relative;
+}
+
+.border-t:before,
+.border-b:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ddd;
+    right: 0;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.border-b:after {
+    top: auto;
+    bottom: 0;
+}
+
+#wrap {
+    height: 100%;
+}
+
+/* 公共颜色 */
+:root{
+  --c : #FE0000;
+}
+/* 阴影 */
+.dash{
+    box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.1), 0px 10px 10px rgba(0, 0, 0, 0.04);
+}
+/* 渐变 */
+.gradient-ramp{
+background: linear-gradient(172.64deg, #FE0000 0%, #FAA19C 102.22%);
+}
+
+/* 0.84rem 按钮样式 */
+.btn-style {
+  padding: 0 0.48rem;
+  border-radius: 0.42rem;
+  position: fixed;
+  bottom: 1.16rem;
+  right: 0.4rem;
+  font-weight: 600;
+  font-size: 0.36rem;
+  line-height: 0.84rem;
+  color: #FFFFFF;
+}
+/* 1rem 按钮 */
+.mybtn {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.36rem;
+  line-height: 1rem;
+  text-align: center;
+}
+/* placeholder */
+input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    color: #BDBDBD;
+    /* placeholder字体大小  */
+    font-size: 0.28rem;
+}

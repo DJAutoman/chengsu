@@ -1,0 +1,176 @@
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.head-bg {
+    background: url('../image/home/home-room-head-bg.png');
+    width: 100%;
+    height: 4.4rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+}
+
+.head-bg img{
+    width: 0.2rem;
+    height: 0.4rem;
+    margin: 1.2rem 0 0 .6rem;
+}
+
+.select {
+    padding: 0 0.4rem;
+    font-size: 0.28rem;
+}
+
+.select-hotel {
+    background: white;
+    padding: 0.4rem 0.32rem;
+    border-radius: 4px;
+    position: relative;
+    top: -0.92rem;
+
+}
+
+.select-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.24rem;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.select-area-left,
+.select-area-right {
+    display: flex;
+    align-items: center;
+}
+
+.select-area-left img {
+    width: 0.32rem;
+    margin-right: 0.16rem;
+}
+
+.select-area-right img {
+    width: 0.24rem;
+    margin-right: 0.08rem;
+}
+.tored{
+    color: var(--c);
+}
+.select-time {
+    padding: 0.32rem 0 0.24rem;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.select-time-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-time-top span {
+    color: #757575;
+}
+
+.select-time-top-left,
+.select-time-top-right {
+    display: flex;
+    align-items: center;
+}
+
+.select-time-top-right span{
+    margin-right: 0.5rem;
+}
+
+.select-time-top img {
+    width: 0.32rem;
+    margin-right: 0.16rem;
+}
+
+.select-time-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-top: 0.16rem;
+}
+
+.check-in{
+    margin-left: 0.48rem;
+}
+
+.select-search {
+    padding: 0.32rem 0 0.24rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.select-search img {
+    width: 0.32rem;
+    margin-right: 0.16rem;
+}
+
+.select-search input {
+    flex: 1;
+}
+
+.select-btn {
+    line-height: 0.84rem;
+    text-align: center;
+    border-radius: 0.42rem;
+    margin-top: 0.4rem;
+}
+
+.select-btn span {
+    font-weight: 600;
+    font-size: 0.36rem;
+    color: #FFFFFF;
+}
+
+.frame-center {
+    padding: 0 0.4rem;
+}
+
+.frame-img {
+    width: 100%;
+}
+
+.frame-img img {
+    width: 100%;
+}
+
+.swiper {
+    padding-bottom: 0.48rem;
+}
+
+.all-swiper {
+    margin: 0.48rem 0;
+}
+
+.swiper-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.24rem;
+    padding: 0 0.4rem;
+}
+
+.swiper-banner {
+    width: 100%;
+    height: 3.2rem;
+    background: yellow;
+}
+
+.swiper-text-top {
+    color: #212121;
+    font-weight: 600;
+    font-size: 0.34rem;
+    margin-right: 0.08rem;
+}
+
+.swiper-text-bottom {
+    font-size: 0.26rem;
+}

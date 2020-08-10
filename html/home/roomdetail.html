@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房间详情</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/roomdetail.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="head-bg">
+            <img @click="goBackHandler" src="../../image/hotellist/hotel-head-bg.png" alt="">
+            <div class="head-back">
+                <div class="head-back-l"><img src="../../image/icon/arrow-left-white.png" alt=""></div>
+                <div class="head-back-r"><img src="../../image/icon/picture.png" alt=""><span>120张</span></div>
+            </div>
+        </div>
+
+        <div class="main-top dash">
+            <div class="suite">
+                <section class="suite-title">商务大床套房</section>
+                <section class="suite-price">￥<span>178</span>/晚</section>
+            </div>
+            <div class="suite-detail">
+                <div class="suite-detail-child">
+                    <div class="suite-info">房屋面积: <span>40㎡</span> </div>
+                    <div class="suite-info">入住人数: <span>2人</span> </div>
+                </div>
+                <div class="suite-info">床型与数量: <span>1张大床1.8米</span> </div>
+            </div>
+            <div class="">
+            <div class="configuration-all">
+                <div class="configuration">
+                    <img src="../../image/icon/AirConditioning.png" alt=""><span>空调</span>
+                </div>
+                <div class="configuration">
+                    <img src="../../image/icon/AirConditioning.png" alt=""><span>空调</span>
+                </div>
+                <div class="configuration">
+                    <img src="../../image/icon/AirConditioning.png" alt=""><span>空调</span>
+                </div>
+                <div class="configuration">
+                    <img src="../../image/icon/AirConditioning.png" alt=""><span>空调</span>
+                </div>
+            </div>
+
+            <div class="configuration-zhan"><span>展开</span><img src="../../image/icon/arrow-down.png" alt=""></div>
+        </div>
+        </div>
+
+        <main>
+            <div class="cancel">
+                <div class="cancel-info">
+                    <section class="cancel-content">
+                        <section class="cancel-title">取消政策</section>
+                        <section class="cancel-clause">
+                            <section>入住日18:00之前可无责任取消订单</section>
+                            <section>入住日18:00-20:00取消订单扣除30%金额</section>
+                            <section>入住日20:00-24:00取消订单扣除50%金额</section>
+                        </section>
+                    </section>
+
+                    <section class="cancel-content">
+                        <section class="cancel-title">入住须知</section>
+                        <section class="cancel-teshu">
+                            <section>酒店允许儿童入住</section>
+                            <section>加床及儿童政策取决于您所选的房型，若超过限定人数，可能需收取额外的费用，提出的任何要求均需获得酒店的认可</section>
+                            <section>可携带宠物</section>
+                            <section>酒店提供早餐 <br /> 价格: 免费</section>
+                            <section>酒店提供停车场 价格: 免费</section>
+                        </section>
+                    </section>
+
+                    <section class="cancel-content">
+                        <section class="cancel-title">预订提示</section>
+                        <section class="cancel-clause">
+                            <section>订单需等酒店或供应商确认后生效，订单确认结果以城宿短信通知为准</section>
+                        </section>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!--固定定位 btn -->
+        <button class="btn-style gradient-ramp"><span>立即预订</span></button>
+
+    </div>
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function({
+            openWin,
+            closeWin,
+        }) {
+            new Vue({
+                el: ".container",
+
+                data() {
+                    return {}
+                },
+
+                methods: {
+                    goBackHandler() {
+                        closeWin()
+                    },
+                },
+            })
+
+        })
+    </script>
+</body>
+
+</html>

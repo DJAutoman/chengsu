@@ -1,0 +1,120 @@
+/* 登录注册 */
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.cs-bg {
+    background: url('../image/register/register-bg.png');
+    width: 100%;
+    height: 6.2rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0;
+}
+
+.cs-logo{
+    width: 2.62rem;
+    margin: 0 auto;
+}
+.cs-logo img {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+main{
+    padding: 0.72rem;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    top: -8px;
+    z-index: 1000;
+    background: white;
+}
+
+.num-input{
+margin-bottom: 0.48rem;
+}
+
+.num-text{
+font-size: 0.28rem;
+color: #757575;
+}
+
+.num-manual{
+    border-bottom: 1px solid #EEEEEE;
+    padding:8px 0 2px;
+    color: #212121;
+    font-size: 0.34rem;
+}
+.num-manual-width{
+    width: 100%;
+}
+.gain{
+    color: #FE0000;font-size: 0.28rem;
+    margin-left: 0.6rem;
+}
+.vercode-input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.vercode-input input {
+    flex: 1;
+}
+.content-btn{
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.content-btn button{
+    width: 100%;
+    height: 100%;
+}
+.content-btn button img{
+    width: 0.68rem;
+}
+.content-deal{
+    color: #bdbdbd;
+    font-size: 0.24rem;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 0.64rem;
+}
+.user-agreement{
+    color: #FE0000;
+    font-size: 0.24rem;
+}
+
+/* 登录样式 */
+.select-login{
+    text-align: right;
+    margin-top: 0.16rem;
+}
+
+.segmentation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #BDBDBD;
+    font-size: 0.22rem;
+    margin: 0.48rem 0;
+}
+
+.line-text{
+    margin: 0 0.4rem;
+}
+
+.line{
+    flex: 1;
+    border-top: 1px solid #EEEEEE;
+}
+
+.wechat-logo{
+    width: 0.96rem;
+    margin: 0 auto;
+}
+
+.wechat-logo img{
+    width: 100%;
+}

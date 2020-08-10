@@ -1,0 +1,124 @@
+.container {
+    background: url("../image/login/login-bg.png");
+    background-position: top left;
+    background-size: 100% 100%;
+    padding: 0.96rem 0.72rem 0.72rem;
+}
+
+input {
+    color: #FFFFFF;
+    font-size: 0.34rem;
+}
+
+.head {
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 1.48rem;
+}
+
+.head-ch {
+    font-size: 0.64rem;
+    margin-bottom: 0.08rem;
+}
+
+.head-egl {
+    font-size: 0.28rem;
+    opacity: 0.5;
+}
+
+.num-input {
+    padding: 0.36rem 0 0.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+.num-text,
+.gain {
+    color: #bdbdbd;
+    font-size: 0.28rem;
+}
+
+.num-text {
+    margin-bottom: 0.24rem;
+}
+
+.vercode-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gobtn {
+    background: linear-gradient(152.35deg, #F7F0D4 0%, #F8EFD6 100%);
+}
+
+.gobtn:active {
+    background: linear-gradient(154.64deg, #F3CD88 0%, #FDEABE 100%);
+}
+
+.account {
+    font-size: 0.24rem;
+    color: #bdbdbd;
+    text-align: center;
+}
+
+.account span {
+    color: #FFD584;
+}
+
+.other-ways {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line-text {
+    font-size: 0.22rem;
+    color: white;
+    margin: 0 0.46rem;
+}
+
+.line {
+    border-top: 1px solid #FFFFFF;
+    ;
+    flex: 1;
+}
+
+.wechat {
+    margin: 0.24rem 0 0.72rem;
+}
+
+.wechat-icon {
+    width: 0.96rem;
+    margin: 0 auto;
+}
+
+.wechat-icon img {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 0.16rem;
+
+}
+
+.wechat-text {
+    font-size: 0.26rem;
+    color: white;
+    text-align: center;
+}
+
+.content-bottom {
+    margin: 0.72rem 0;
+}
+
+.myaccount {
+    margin: 0.32rem 0.48rem;
+}
+
+/* 登录 */
+.login-head{
+    margin-top: 2rem;
+}
+
+.ways{
+    margin-top: 0.32rem;
+    text-align: right;
+}

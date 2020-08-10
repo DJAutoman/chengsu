@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酒店介绍</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/hotelintroduce.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="head-bg">
+            <img src="../../image/hotellist/hotel-head-bg.png" alt="">
+            <div class="head-back">
+                <div class="head-back-l" @click="goBackHandler"><img src="../../image/icon/arrow-left-white.png" alt=""></div>
+                <div class="head-back-r"><img src="../../image/icon/picture.png" alt=""><span>120张</span></div>
+            </div>
+        </div>
+
+        <div class="toop dash">
+            <div class="introduce-title">
+                <div class="introduce-title-content">
+                    <section class="introduce-title-content-name">{{hotelName}}</section>
+                    <section class="introduce-title-content-adress">{{hotelAddress}}</section>
+                    <section class="introduce-title-content-room">{{openDate}} 年开业 | {{roomNumber}} 间客房</section>
+                    <section class="introduce-title-content-tel">
+                        <span>酒店电话: {{customerService}}</span>
+                        <img src="../../image/icon/tel.png" alt="">
+                    </section>
+                </div>
+            </div>
+
+            <div class="introduce-star">
+                <div class="introduce-describel">
+                    <div class="introduce-star-num">
+                        <div class="star"><img src="../../image/icon/star.png" alt=""></div>
+                        <div class="star"><img src="../../image/icon/star.png" alt=""></div>
+                        <div class="star"><img src="../../image/icon/star.png" alt=""></div>
+                    </div>
+                    <div class="introduce-star-text">五星豪华型酒店，酒店装修豪华，可提供优质的服务</div>
+                </div>
+
+                <div class="introduce-tepai">
+                    <!-- <div class="tepai"><img src="../../image/hotellist/recommend.png" alt=""><span>特牌</span></div> -->
+                    <div class="tepai-text">我们这个酒店</div>
+                    <div class="tepai-text">
+                        昆明花之城豪生国际大酒店，是独具特色的花卉主题单体酒店，拥有2268间/套的超大体量客房，为您提供多主题、多形式的随心入住体验。高级房、豪华房等各类房型，无论是家庭出游、密友同行，或是情侣度假的多种需求，您都能在此一一得到满足。
+                    </div>
+                    <br />
+                    <div class="tepai-text">
+                        酒店更设有玫瑰、山茶花、薰衣草以及兰花四个花卉主题客房，为您提供前所未有的浪漫奇趣入住体验。房内配备的顶级花卉护肤品以及精油香薰护理品，让您在一天的旅程之后，享受惬意的睡前时光。另外，酒店拥有绝佳的地理位置，距机场仅15分钟车程，您可尊享免费接驳服务等五星级极致礼遇。
+                    </div>
+                </div>
+
+                <div class="shui"><img src="../../image/hotellist/shui.png" alt=""></div>
+            </div>
+        </div>
+        <div class="cancel">
+            <div class="cancel-info">
+                <section class="cancel-content">
+                    <section class="cancel-title">入离时间</section>
+                    <section class="cancel-clause">
+                        <section>入住时间 14:00以后</section>
+                        <section>离店时间 12:00以前</section>
+                    </section>
+                </section>
+
+                <section class="cancel-content">
+                    <section class="cancel-title">取消政策</section>
+                    <section class="cancel-clause">
+                        <section>入住日18:00之前可无责任取消订单</section>
+                        <section>入住日18:00-20:00取消订单扣除30%金额</section>
+                        <section>入住日20:00-24:00取消订单扣除50%金额</section>
+                    </section>
+                </section>
+
+                <section class="cancel-content">
+                    <section class="cancel-title">入住须知</section>
+                    <section class="cancel-teshu">
+                        <section>酒店允许儿童入住</section>
+                        <section>加床及儿童政策取决于您所选的房型，若超过限定人数，可能需收取额外的费用，提出的任何要求均需获得酒店的认可</section>
+                        <section>可携带宠物</section>
+                        <section>酒店提供早餐 <br /> 价格: 免费</section>
+                        <section>酒店提供停车场 价格: 免费</section>
+                    </section>
+                </section>
+
+                <section class="cancel-content">
+                    <section class="cancel-title">预订提示</section>
+                    <section class="cancel-clause">
+                        <section>订单需等酒店或供应商确认后生效，订单确认结果以城宿短信通知为准</section>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <div class="net-serve dash">
+            <div class="network">
+                <div class="net facility">
+                    <div class="net-name facility-name">网络服务</div>
+                    <div class="net-option facility-option">
+                        <div class="option">房间WiFi</div>
+                        <div class="option">客房WiFi</div>
+                        <div class="option">房间WiFi</div>
+                        <div class="option">房间WiFi</div>
+                        <div class="option">房间WiFi</div>
+                    </div>
+                </div>
+                <div class="common facility">
+                    <div class="common-name facility-name">通用设施</div>
+                    <div class="common-option facility-option">
+                        <div class="option">电视</div>
+                        <div class="option">游泳池</div>
+                        <div class="option">电视</div>
+                        <div class="option">电视</div>
+                        <div class="option">电视</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function ({
+            openWin,
+            closeWin,
+            post,
+            showToast,
+        }) {
+            new Vue({
+                el: ".container",
+
+                data() {
+                    return {
+                        hotelId:api.pageParam.hotelId,   //酒店ID
+
+                        openDate:null,   //开业时间
+                        hotelImg:null,   //首图
+                        roomNumber:null, //房间
+                        star:null,       //星级
+                        introduce:null,  //介绍
+                        customerService:null,   //服务热线
+                        hotelAddress:null,  //地址
+                        hotelName : null,   //name
+
+                    }
+                },
+                mounted () {
+                    this.getHotelInfo()
+                },
+
+                methods: {
+                    goBackHandler(){
+                        closeWin()
+                    },
+
+                    getHotelInfo(){
+                        post(`/api/cs/hotel/info`,{hotel_id : this.hotelId},(res,err)=>{
+                            if(err || res.code !== 200){
+                                showToast('信息拉取失败',2000)
+                                return
+                            }
+
+                            console.log(JSON.stringify(res))
+
+                            this.openDate = res.data.query.open_date.slice(0,4)
+                            this.hotelImg = res.data.query.hotel_img
+                            this.roomNumber = res.data.query.roomNumber
+                            this.star = res.data.query.star
+                            this.introduce = res.data.query.introduce
+                            this.customerService = res.data.query.customer_service
+                            this.hotelAddress = res.data.query.hotel_address
+                            this.hotelName = res.data.query.hotel_name
+                     
+
+
+
+                        })
+
+                    },
+                },
+            })
+
+        })
+    </script>
+</body>
+
+</html>

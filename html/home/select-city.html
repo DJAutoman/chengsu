@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择目的地</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <style>
+        /* .head-title {
+            font-weight: 600;
+            font-size: 0.34rem;
+            color: #212121;
+            opacity: 0.9;
+            text-align: center;
+            padding: 1.12rem 0.6rem 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+        }
+
+        .back-btn {
+            width: 1.2rem;
+            text-align: left;
+        }
+
+        .head-title img {
+            width: 0.12rem;
+            height: 0.24rem;
+        }
+
+        .head-right {
+            width: 1.2rem;
+            color: var(--c);
+            font-size: 0.28rem;
+        } */
+
+        .current-city {
+            padding: 0 0.4rem 0.28rem;
+        }
+
+        .all-city {
+            padding-bottom: 0.28rem;
+        }
+
+        .current {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.32rem;
+        }
+
+        .sort-city {
+            padding-left: 0.4rem;
+        }
+
+        .title-color {
+            width: 0.08rem;
+            height: 0.34rem;
+            border-radius: 99px;
+            background-color: var(--c);
+            margin-right: 0.16rem;
+        }
+
+        .title {
+            color: #212121;
+            font-size: 0.34rem;
+            font-weight: 600;
+        }
+
+        .city {
+            display: inline-block;
+            padding: 0.12rem 0.32rem;
+            margin: 0 0.48rem 0.24rem 0;
+            background: #F4F7FF;
+            border-radius: 2px;
+        }
+
+        .hot-city {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .city:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        .city:nth-child(4n+1) {
+            margin-left: 0.24rem;
+        }
+
+        .letter {
+            color: #424242;
+            font-size: 0.28rem;
+            background: #F4F6FF;
+            padding: 0.12rem 0.4rem;
+        }
+
+        .include {
+            padding: 0 0.4rem;
+        }
+
+        .include-city {
+            padding: 0.24rem 0;
+            border-bottom: 1px solid #EEEEEE;
+        }
+
+        .city-font {
+            font-size: 0.28rem;
+        }
+
+        .city-mr {
+            margin-left: 0.24rem;
+        }
+
+        .anchor {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            font-size: 0.22rem;
+            line-height: 0.34rem;
+            text-align: center;
+        }
+
+        .anchor-city {
+            color: #0091EA;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <pub-header @back="goBackHandler"><span slot="center">选择目的地</span><span slot="right"></span></pub-header>
+
+        <!-- <div class="head-title">
+            <div class="back-btn"><img src="../../image/icon/arrow-left.png" alt=""></div>
+            <span>选择目的地</span>
+            <span class="head-right"></span>
+        </div> -->
+
+        <main>
+            <div class="current-city">
+                <div class="current">
+                    <div class="title-color"></div>
+                    <div class="title">当前位置</div>
+                </div>
+                <div class="city city-font city-mr">{{cityName}}</div>
+            </div>
+
+            <div class="current-city">
+                <div class="current">
+                    <div class="title-color"></div>
+                    <div class="title">热门城市</div>
+                </div>
+
+                <div class="hot-city city-font">
+                    <div class="city" v-for="item in hotCity" :key="item.area_no">{{item.area_name}}</div>
+
+
+                </div>
+            </div>
+
+
+            <div class="all-city">
+                <div class="current sort-city">
+                    <div class="title-color"></div>
+                    <div class="title">全部城市</div>
+                </div>
+
+                <div class="letter-city" v-for="item in cityList" :key="item.letter">
+                    <div class="letter" id="">{{item.letter}}</div>
+                    <div class="include city-font" v-for="i in item.city_item" :key="i.area_no">
+                        <div class="include-city">{{i.area_name}}</div>
+                    </div>
+                </div>
+
+                <div class="anchor">
+                    <div class="" v-for="(item,index) in anchor" :key="index"><a class="anchor-city"
+                            href="">{{item}}</a></div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function ({
+            post,
+            openWin,
+            closeWin,
+            importVue,
+            showToast,
+        }) {
+            const components = importVue(['widget://component/pub-header.vue'])
+            new Vue({
+                el: ".container",
+                components,
+                data() {
+                    return {
+                        cityList: null,
+                        hotCity: null,
+                        anchor: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'G', 'K', 'L', 'M', 'N',
+                            'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+                        ],
+                        cityName: api.pageParam.cityName,    //当前位置
+                        cityCode: api.pageParam.cityCode,
+                    }
+                },
+                mounted() {
+                    this.getCityList();
+                    this.getHotCity();
+                },
+
+                methods: {
+                    hotelList() {
+                        openWin('hotelList', "widget://html/home/hotellist.html", null)
+                    },
+                    toSelectCity() {
+                        openWin('selectCity', "widget://html/home/select-city.html", null)
+                    },
+                    goBackHandler() {
+                        closeWin()
+                    },
+
+
+                    //获取热门城市
+                    getHotCity() {
+                        post(`/api/cs/hotel/hotCity`, null, (res, err) => {
+                            if (err || res.code !== 200) {
+                                showToast('城市获取失败', 2000);
+                                return;
+                            }
+                            this.hotCity = res.data.query;
+                            console.log(JSON.stringify(this.hotCity));
+
+
+                        })
+                    },
+
+                    //获取全部城市
+                    getCityList() {
+                        post(`/api/cs/hotel/selectCity`, null, (res, err) => {
+                            if (err || res.code !== 200) {
+                                showToast('城市获取失败', 2000);
+                                return;
+                            };
+                            this.cityList = res.data.query;
+                        })
+                    }
+
+                },
+            })
+
+        })
+    </script>
+</body>
+
+</html>

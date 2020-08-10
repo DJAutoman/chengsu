@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/order.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="head-title"><span>订单</span></div>
+
+        <div class="head">
+            <img class="dash" src="../../image/order/order-banner.png" alt="">
+        </div>
+
+        <div class="classify">
+            <div class="classify-title">
+                订单分类
+            </div>
+
+            <div class="classify-options">
+                  <div class="option option-c1" @click="goOrderAll">
+                      <div class="option-text wenzi1">全部</div>
+                      <div class="option-img"><img src="../../image/order/order1.png" alt=""></div>
+                  </div>
+
+                  <div class="option option-c2" @click="obligation">
+                    <div class="option-text wenzi2">待付款</div>
+                    <div class="option-img"><img src="../../image/order/order2.png" alt=""></div>
+                </div>
+
+                <div class="option option-c3" @click="confirmed">
+                    <div class="option-text wenzi3">待确认</div>
+                    <div class="option-img"><img src="../../image/order/order3.png" alt=""></div>
+                </div>
+
+                <div class="option option-c4" @click="stay">
+                    <div class="option-text wenzi4">待入住</div>
+                    <div class="option-img"><img src="../../image/order/order4.png" alt=""></div>
+                </div>
+
+                <div class="option option-c5" @click="completed">
+                    <div class="option-text wenzi5">已完成</div>
+                    <div class="option-img"><img src="../../image/order/order5.png" alt=""></div>
+                </div>
+                <div class="option option-c6" @click="canc">
+                    <div class="option-text wenzi6">已取消</div>
+                    <div class="option-img"><img src="../../image/order/order6.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../script/api.js"></script>
+    <script src="../../script/vue.js"></script>
+    <script src="../../script/index.js"></script>
+    <script>
+        ApiRender(function ({
+            openWin,
+            closeWin,
+
+        }) {
+            new Vue({
+                el: ".container",
+                data() {
+                    return {}
+                },
+
+                methods: {
+                   //     openWin('fans', "widget://html/mine/fans.html", null)
+                   goOrderAll(){
+                    openWin('goOrderAll', "widget://html/order/order-all.html", null)
+                   },
+                   obligation(){
+                    openWin('orderStatus', "widget://html/order/order-status.html", null)
+                   },
+                   confirmed(){
+                    openWin('orderStatus', "widget://html/order/order-status.html", null)
+                   },
+                   obligation(){
+                    openWin('orderStatus', "widget://html/order/order-status.html", null)
+                   },
+                   stay(){
+                    openWin('orderStatus', "widget://html/order/order-status.html", null)
+                   },
+                   completed(){
+                    openWin('orderStatus', "widget://html/order/order-status.html", null)
+                   },
+                   canc(){
+                    openWin('orderStatus', "widget://html/order/order-status.html", null)
+                   },
+                },
+            })
+
+        })
+    </script>
+</body>
+</html>
